@@ -90,20 +90,23 @@ export default function AiDemo() {
 
   // Content generation mutation
   const contentMutation = useMutation({
-    mutationFn: (data: ContentGenerationFormData) =>
-      apiRequest('/api/ai/generate', {
+    mutationFn: (data: ContentGenerationFormData) => {
+      return apiRequest('/api/ai/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      }),
-    onSuccess: (data) => {
-      setGeneratedContent(data.generatedText);
-      toast({
-        title: 'Content Generated',
-        description: 'Your AI content has been successfully generated.',
       });
+    },
+    onSuccess: (data) => {
+      if (data && data.generatedText) {
+        setGeneratedContent(data.generatedText);
+        toast({
+          title: 'Content Generated',
+          description: 'Your AI content has been successfully generated.',
+        });
+      }
     },
     onError: (error) => {
       toast({
@@ -116,20 +119,23 @@ export default function AiDemo() {
 
   // Text analysis mutation
   const analysisMutation = useMutation({
-    mutationFn: (data: TextAnalysisFormData) =>
-      apiRequest('/api/ai/analyze', {
+    mutationFn: (data: TextAnalysisFormData) => {
+      return apiRequest('/api/ai/analyze', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      }),
-    onSuccess: (data) => {
-      setAnalysisResult(data.analysis);
-      toast({
-        title: 'Analysis Complete',
-        description: 'Your text has been analyzed successfully.',
       });
+    },
+    onSuccess: (data) => {
+      if (data && data.analysis) {
+        setAnalysisResult(data.analysis);
+        toast({
+          title: 'Analysis Complete',
+          description: 'Your text has been analyzed successfully.',
+        });
+      }
     },
     onError: (error) => {
       toast({
@@ -142,20 +148,23 @@ export default function AiDemo() {
 
   // Idea generation mutation
   const ideaMutation = useMutation({
-    mutationFn: (data: IdeaGenerationFormData) =>
-      apiRequest('/api/ai/ideas', {
+    mutationFn: (data: IdeaGenerationFormData) => {
+      return apiRequest('/api/ai/ideas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      }),
-    onSuccess: (data) => {
-      setBusinessIdeas(data.ideas);
-      toast({
-        title: 'Ideas Generated',
-        description: 'Your AI business ideas have been generated.',
       });
+    },
+    onSuccess: (data) => {
+      if (data && data.ideas) {
+        setBusinessIdeas(data.ideas);
+        toast({
+          title: 'Ideas Generated',
+          description: 'Your AI business ideas have been generated.',
+        });
+      }
     },
     onError: (error) => {
       toast({

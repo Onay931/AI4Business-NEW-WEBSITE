@@ -53,9 +53,9 @@ export default function Hero() {
             className="md:w-1/2 mt-12 md:mt-0"
           >
             <div className="relative">
-              {/* Futuristic AI digital interface image */}
+              {/* Modern AI technology image */}
               <img 
-                src="https://pixabay.com/get/gba010903d2a3f345ee956842c8a55b2272be9a835c1573c171973e45b016d9fa15d01c2bda0fddfac0d3364f49f0c6bd430cb226fd3a18ccd9e703906d9cb5eb_1280.jpg" 
+                src="https://images.unsplash.com/photo-1677442135136-760c813ecff6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="AI Business Solutions" 
                 className="rounded-xl shadow-2xl w-full h-auto"
               />

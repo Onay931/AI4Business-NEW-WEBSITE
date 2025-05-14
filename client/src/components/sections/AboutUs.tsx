@@ -29,14 +29,14 @@ const StatCard: React.FC<StatCardProps> = ({ icon, label, value }) => {
   return (
     <motion.div 
       variants={itemVariants}
-      className="bg-white rounded-lg p-4 shadow-md flex items-center w-48"
+      className="bg-white rounded-lg p-4 shadow-sm flex items-center border border-gray-100"
     >
-      <div className="w-12 h-12 bg-[hsl(var(--primary)/10)] rounded-full flex items-center justify-center mr-3">
+      <div className="w-10 h-10 bg-[hsl(var(--primary)/10)] rounded-full flex items-center justify-center mr-3">
         <i className={`${icon} text-[hsl(var(--primary))]`}></i>
       </div>
       <div>
-        <div className="text-sm font-medium text-gray-500">{label}</div>
-        <div className="font-bold">{value}</div>
+        <div className="text-xs font-medium text-gray-500">{label}</div>
+        <div className="font-bold text-sm">{value}</div>
       </div>
     </motion.div>
   );
@@ -66,18 +66,18 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold font-montserrat mb-6 text-[hsl(var(--primary))]">Our Mission</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold font-montserrat mb-4 text-[hsl(var(--primary))]">Our Mission</h3>
+            <p className="text-gray-600 mb-6 text-sm leading-relaxed">
               At AI4Business South Africa, we're passionate about helping local businesses thrive in the global digital economy. Our mission is to empower South African businesses through intelligent automation, enhanced decision-making, and seamless AI integration.
             </p>
             
-            <h3 className="text-2xl font-bold font-montserrat mb-6 text-[hsl(var(--primary))]">Our Approach</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold font-montserrat mb-4 text-[hsl(var(--primary))]">Our Approach</h3>
+            <p className="text-gray-600 mb-6 text-sm leading-relaxed">
               We combine cutting-edge AI knowledge with practical business acumen, delivering tailored solutions that drive measurable success. Our approach includes deep industry research, robust AI model training, and ongoing iterative improvements to ensure businesses achieve maximum ROI.
             </p>
             
-            <h3 className="text-2xl font-bold font-montserrat mb-6 text-[hsl(var(--primary))]">Our Commitment</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold font-montserrat mb-4 text-[hsl(var(--primary))]">Our Commitment</h3>
+            <p className="text-gray-600 mb-6 text-sm leading-relaxed">
               We pride ourselves on being a trusted, long-term partner in your AI journey. Our commitment goes beyond implementation — we ensure your business continues to thrive with AI through continuous support, optimization, and adaptation to evolving technologies.
             </p>
             
@@ -103,34 +103,34 @@ export default function AboutUs() {
           >
             <motion.div variants={itemVariants}>
               <img 
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="AI4Business South Africa Team" 
-                className="rounded-xl shadow-xl w-full h-auto"
+                className="rounded-xl shadow-md w-full h-auto"
               />
             </motion.div>
             
-            <motion.div variants={itemVariants} className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold font-montserrat mb-4">Why Choose AI4Business South Africa?</h3>
+            <motion.div variants={itemVariants} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold font-montserrat mb-4 text-[hsl(var(--primary))]">Why Choose AI4Business South Africa?</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span className="text-gray-600">Local expertise with global standards</span>
+                  <i className="fas fa-check-circle text-[hsl(var(--gold))] mt-1 mr-3 text-sm"></i>
+                  <span className="text-gray-600 text-sm">Local expertise with global standards</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span className="text-gray-600">Tailored solutions for South African business challenges</span>
+                  <i className="fas fa-check-circle text-[hsl(var(--gold))] mt-1 mr-3 text-sm"></i>
+                  <span className="text-gray-600 text-sm">Tailored solutions for South African business challenges</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span className="text-gray-600">End-to-end AI integration and support</span>
+                  <i className="fas fa-check-circle text-[hsl(var(--gold))] mt-1 mr-3 text-sm"></i>
+                  <span className="text-gray-600 text-sm">End-to-end AI integration and support</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span className="text-gray-600">Commitment to ethical AI and data governance</span>
+                  <i className="fas fa-check-circle text-[hsl(var(--gold))] mt-1 mr-3 text-sm"></i>
+                  <span className="text-gray-600 text-sm">Commitment to ethical AI and data governance</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                  <span className="text-gray-600">Proven track record of successful AI implementations</span>
+                  <i className="fas fa-check-circle text-[hsl(var(--gold))] mt-1 mr-3 text-sm"></i>
+                  <span className="text-gray-600 text-sm">Proven track record of successful AI implementations</span>
                 </li>
               </ul>
             </motion.div>

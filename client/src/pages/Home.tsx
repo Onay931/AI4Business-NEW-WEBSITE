@@ -1,8 +1,8 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import MarketMomentum from "@/components/sections/MarketMomentum";
 import Services from "@/components/sections/Services";
+import MarketMomentum from "@/components/sections/MarketMomentum";
 import BenefitsTimeline from "@/components/sections/BenefitsTimeline";
 import Industries from "@/components/sections/Industries";
 import CostOfInaction from "@/components/sections/CostOfInaction";
@@ -22,8 +22,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <MarketMomentum />
         <Services />
+        <MarketMomentum />
         <BenefitsTimeline />
         <Industries />
         <CostOfInaction />

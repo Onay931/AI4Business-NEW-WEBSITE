@@ -3,7 +3,7 @@ import { ArrowRightIcon, CheckIcon } from "@/assets/icons";
 
 // Animation variants
 const cardVariants = {
-  offscreen: { y: 50, opacity: 0 },
+  offscreen: { y: 30, opacity: 0 },
   onscreen: (i: number) => ({ 
     y: 0, 
     opacity: 1,
@@ -27,21 +27,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.3 }}
       variants={cardVariants}
-      className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+      className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-100"
     >
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <div className="h-48 overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
+      </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold font-montserrat mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <h3 className="text-xl font-bold font-montserrat mb-3 text-[hsl(var(--primary))]">{title}</h3>
+        <p className="text-gray-600 mb-4 text-sm">{description}</p>
         <ul className="space-y-2 text-gray-600 mb-6">
           {features.map((feature, idx) => (
             <li key={idx} className="flex items-start text-sm">
-              <CheckIcon className="text-[hsl(var(--primary))] mt-1 mr-2 flex-shrink-0" size={16} />
+              <CheckIcon className="text-[hsl(var(--gold))] mt-1 mr-2 flex-shrink-0" size={16} />
               <span>{feature}</span>
             </li>
           ))}
         </ul>
-        <a href="#contact" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-light))] font-semibold flex items-center transition-colors duration-300">
+        <a href="#contact" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary-light))] font-semibold flex items-center transition-colors duration-300 text-sm">
           Learn More <ArrowRightIcon className="ml-2" size={16} />
         </a>
       </div>
@@ -59,7 +61,7 @@ export default function Services() {
         "Use case identification & prioritization",
         "Ethical AI governance frameworks"
       ],
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450"
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Custom AI Tooling & Development",
@@ -69,7 +71,7 @@ export default function Services() {
         "Natural language processing solutions",
         "Computer vision applications"
       ],
-      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450"
+      image: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "System Integration",
@@ -79,7 +81,7 @@ export default function Services() {
         "Seamless workflow integration",
         "Minimal disruption implementation"
       ],
-      image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450"
+      image: "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Workforce Training & Upskilling",
@@ -89,7 +91,7 @@ export default function Services() {
         "Technical team upskilling",
         "AI-ready culture development"
       ],
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450"
+      image: "https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Maintenance & Optimization",
@@ -99,7 +101,7 @@ export default function Services() {
         "Regular model retraining",
         "System optimization & updates"
       ],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=450"
+      image: "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Data Security & Compliance",
@@ -109,7 +111,7 @@ export default function Services() {
         "Secure data handling protocols",
         "Ethical AI implementation"
       ],
-      image: "https://pixabay.com/get/g368b0df91da8aff314c0fdbc105ba4fc6c85d65e4006522c1e7ac065395625ecc9279e378090b3c2c3f88325780afe98f2773ea01a9fba94559582aa034b6888_1280.jpg"
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 
@@ -129,7 +131,7 @@ export default function Services() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

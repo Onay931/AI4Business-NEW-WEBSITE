@@ -6,6 +6,7 @@ import BenefitsTimeline from "@/components/sections/BenefitsTimeline";
 import MarketMomentum from "@/components/sections/MarketMomentum";
 import Industries from "@/components/sections/Industries";
 import CostOfInaction from "@/components/sections/CostOfInaction";
+import AiDemo from "@/components/sections/AiDemo";
 import AboutUs from "@/components/sections/AboutUs";
 import Contact from "@/components/sections/Contact";
 import CallToAction from "@/components/sections/CallToAction";
@@ -27,6 +28,7 @@ export default function Home() {
         <MarketMomentum />
         <Industries />
         <CostOfInaction />
+        <AiDemo />
         <AboutUs />
         <Contact />
         <CallToAction />

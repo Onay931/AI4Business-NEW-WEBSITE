@@ -3,14 +3,14 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { MenuIcon } from "@/assets/icons";
 import { motion, AnimatePresence } from "framer-motion";
-import companyLogoSrc from "@assets/CUSTOM AI for every business_20250425_121748_0000.png";
+import logoSrc from "@assets/CUSTOM AI for every business_20250425_121748_0000.png";
 
 const navItems = [
   { label: "Home", href: "#hero" },
-  { label: "Services", href: "#services" },
+  { label: "Solutions", href: "#services" },
   { label: "Benefits", href: "#benefits" },
   { label: "Industries", href: "#industries" },
-  { label: "About Us", href: "#about" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" }
 ];
 
@@ -18,7 +18,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll event to add shadow to header when scrolled
+  // Handle scroll event to add background to header when scrolled
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -41,36 +41,81 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed w-full bg-white z-50 ${scrolled ? "shadow-md" : ""} transition-shadow duration-300`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? "bg-white/95 backdrop-blur-sm shadow-lg py-2" 
+        : "bg-transparent py-4"
+    }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
+        <div className="flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center"
+          >
             {/* Logo */}
             <Link href="#hero" className="flex items-center">
               <img 
-                src={companyLogoSrc} 
+                src={logoSrc} 
                 alt="AI4Business South Africa Logo" 
-                className="h-12 w-auto" 
+                className="h-10 w-auto" 
               />
               <div className="ml-3">
-                <span className="text-xl font-bold text-[hsl(var(--primary))] font-montserrat">AI4BUSINESS</span>
-                <span className="block text-xs text-gray-600 font-medium">SOUTH AFRICA</span>
+                <span className={`text-lg font-bold font-montserrat ${scrolled ? 'text-[hsl(var(--primary))]' : 'text-white'}`}>
+                  AI4BUSINESS
+                </span>
+                <span className={`block text-xs font-medium ${scrolled ? 'text-gray-600' : 'text-white/80'}`}>
+                  SOUTH AFRICA
+                </span>
               </div>
             </Link>
-          </div>
+          </motion.div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a 
+          <motion.nav 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="hidden md:flex items-center space-x-1"
+          >
+            {navItems.map((item, index) => (
+              <motion.div
                 key={item.label}
-                href={item.href} 
-                className="nav-item text-gray-700 hover:text-[hsl(var(--primary))] font-medium transition-colors duration-300"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
               >
-                {item.label}
-              </a>
+                <a 
+                  href={item.href} 
+                  className={`nav-item px-4 py-2 mx-1 rounded-md font-medium transition-colors duration-300 hover:bg-white/10 ${
+                    scrolled 
+                      ? 'text-gray-700 hover:text-[hsl(var(--primary))]' 
+                      : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              </motion.div>
             ))}
-          </nav>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              className="ml-2"
+            >
+              <a href="https://wa.me/0692992530" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="sm"
+                  variant={scrolled ? "default" : "white"}
+                  className="font-semibold"
+                >
+                  <i className="fab fa-whatsapp mr-2"></i> Contact
+                </Button>
+              </a>
+            </motion.div>
+          </motion.nav>
           
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -78,7 +123,11 @@ export default function Header() {
               variant="ghost" 
               onClick={toggleMenu} 
               aria-label="Toggle menu"
-              className="text-gray-500 hover:text-[hsl(var(--primary))] focus:outline-none focus:text-[hsl(var(--primary))]"
+              className={`focus:outline-none ${
+                scrolled 
+                  ? 'text-gray-700 hover:text-[hsl(var(--primary))]' 
+                  : 'text-white hover:text-white/80'
+              }`}
             >
               <MenuIcon />
             </Button>
@@ -93,19 +142,30 @@ export default function Header() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white rounded-lg mt-2 shadow-lg"
             >
-              <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+              <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item) => (
                   <a 
                     key={item.label}
                     href={item.href} 
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[hsl(var(--primary))] hover:bg-gray-50"
+                    className="block px-4 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[hsl(var(--primary))] hover:bg-gray-50"
                     onClick={closeMenu}
                   >
                     {item.label}
                   </a>
                 ))}
+                <div className="px-4 py-3 border-t border-gray-100">
+                  <a 
+                    href="https://wa.me/0692992530" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center text-green-600 font-medium"
+                    onClick={closeMenu}
+                  >
+                    <i className="fab fa-whatsapp mr-2 text-lg"></i> WhatsApp Us
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}

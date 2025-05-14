@@ -212,7 +212,7 @@ export default function AboutUs() {
                     <div className="text-xs text-gray-500">South Africa</div>
                   </div>
                   <img 
-                    src="@assets/CUSTOM AI for every business_20250425_121748_0000.png"
+                    src="/images/logo.png"
                     alt="AI4Business Logo" 
                     className="h-12 w-auto"
                   />

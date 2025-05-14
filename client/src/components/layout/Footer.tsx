@@ -156,7 +156,7 @@ export default function Footer() {
                 <div className="mt-1 mr-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-map-marker-alt text-[hsl(var(--gold))]"></i>
                 </div>
-                <span className="text-blue-200">Johannesburg, South Africa</span>
+                <span className="text-blue-200">Linksfield, Johannesburg, South Africa</span>
               </li>
               <li className="flex items-start">
                 <div className="mt-1 mr-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
@@ -178,7 +178,11 @@ export default function Footer() {
                 <div className="mt-1 mr-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <i className="fas fa-clock text-[hsl(var(--gold))]"></i>
                 </div>
-                <span className="text-blue-200">Mon-Fri: 8:00 AM - 5:00 PM</span>
+                <div>
+                  <p className="text-blue-200 mb-1">Mon-Thu: 9:00 AM - 7:00 PM</p>
+                  <p className="text-blue-200 mb-1">Fri: 9:00 AM - 3:00 PM</p>
+                  <p className="text-blue-200 text-xs">Sunday: By special request only</p>
+                </div>
               </li>
             </ul>
           </motion.div>

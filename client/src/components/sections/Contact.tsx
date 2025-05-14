@@ -228,7 +228,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold mb-1">Office Location</h4>
-                    <p className="text-white/80">Johannesburg, South Africa</p>
+                    <p className="text-white/80">Linksfield, Johannesburg, South Africa</p>
                   </div>
                 </div>
                 
@@ -248,7 +248,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold mb-1">Call Us</h4>
-                    <p className="text-white/80">+27 (0) 123 456 789</p>
+                    <p className="text-white/80">+27 (0) 69 299 2530</p>
                   </div>
                 </div>
                 
@@ -258,7 +258,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold mb-1">Business Hours</h4>
-                    <p className="text-white/80">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                    <p className="text-white/80 mb-1">Mon-Thu: 9:00 AM - 7:00 PM</p>
+                    <p className="text-white/80 mb-1">Fri: 9:00 AM - 3:00 PM</p>
+                    <p className="text-white/80 text-xs">Sunday: By special request only</p>
                   </div>
                 </div>
               </div>

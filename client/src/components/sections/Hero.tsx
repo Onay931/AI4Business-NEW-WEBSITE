@@ -71,7 +71,7 @@ export default function Hero() {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-montserrat leading-tight mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-                Transform Your Business with AI Mastery
+                Transform Your Business with AI
               </span>
             </h1>
             

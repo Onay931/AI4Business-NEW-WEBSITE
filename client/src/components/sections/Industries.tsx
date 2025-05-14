@@ -103,7 +103,7 @@ export default function Industries() {
       title: "Manufacturing",
       tagline: "Turn your factory into a competitive powerhouse with AI optimization and predictive capabilities.",
       transformation: "Reduce operational costs by 30% while improving quality control and production efficiency.",
-      bgImage: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      bgImage: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-money-bill-wave",

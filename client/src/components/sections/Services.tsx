@@ -120,7 +120,7 @@ export default function Services() {
         "Advanced NLP & computer vision",
         "Intelligent process automation"
       ],
-      image: "https://images.unsplash.com/photo-1526378800651-c1a63a3220fb?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Seamless Integration",
@@ -130,7 +130,7 @@ export default function Services() {
         "Legacy system enhancement",
         "Enterprise-wide AI connectivity"
       ],
-      image: "https://images.unsplash.com/photo-1562577308-c8b2614b9b9c?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      image: "https://images.unsplash.com/photo-1594882645126-14020914d58d?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Talent Acceleration",

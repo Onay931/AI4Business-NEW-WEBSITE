@@ -1,57 +1,89 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckIcon } from "@/assets/icons";
 
 // Animation variants
 const containerVariants = {
-  offscreen: {},
-  onscreen: {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.15
     }
   }
 };
 
 const itemVariants = {
-  offscreen: { opacity: 0, y: 20 },
-  onscreen: { 
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5 }
+    transition: { 
+      type: "spring",
+      stiffness: 100,
+      damping: 15
+    }
+  },
+  hover: {
+    y: -10,
+    scale: 1.02,
+    transition: { 
+      type: "spring", 
+      stiffness: 400, 
+      damping: 10 
+    }
   }
 };
 
 interface IndustryCardProps {
   icon: string;
+  bgImage: string;
   title: string;
-  description: string;
-  benefits: string[];
+  tagline: string;
+  transformation: string;
+  index: number;
 }
 
-const IndustryCard: React.FC<IndustryCardProps> = ({ icon, title, description, benefits }) => {
+const IndustryCard: React.FC<IndustryCardProps> = ({ icon, bgImage, title, tagline, transformation, index }) => {
   return (
     <motion.div 
       variants={itemVariants}
-      className="bg-white rounded-xl shadow p-6 transition-all duration-300 hover:bg-[hsl(var(--light-gray))]"
+      whileHover="hover"
+      className="relative overflow-hidden rounded-xl h-72 group"
     >
-      <div className="flex items-center mb-4">
-        <div className="w-12 h-12 bg-[hsl(var(--primary)/10)] rounded-full flex items-center justify-center mr-4">
-          <i className={`${icon} text-[hsl(var(--primary))] text-xl`}></i>
-        </div>
-        <h3 className="text-xl font-bold font-montserrat">{title}</h3>
-      </div>
-      <p className="text-gray-600 mb-4">
-        {description}
-      </p>
-      <div className="space-y-2">
-        {benefits.map((benefit, index) => (
-          <div key={index} className="flex items-start">
-            <div className="w-6 flex-shrink-0">
-              <CheckIcon className="text-green-500" size={16} />
-            </div>
-            <span className="text-sm text-gray-600">{benefit}</span>
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110 z-0" 
+        style={{ backgroundImage: `url(${bgImage})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/70 to-blue-900/30 z-10"></div>
+      
+      {/* Content */}
+      <div className="relative h-full flex flex-col justify-between p-6 z-20 text-white">
+        <div>
+          <div className="mb-2 flex items-center">
+            <i className={`${icon} text-[hsl(var(--gold))] mr-3 text-xl`}></i>
+            <h3 className="text-xl font-bold font-montserrat">{title}</h3>
           </div>
-        ))}
+          <p className="text-white/90 text-sm">
+            {tagline}
+          </p>
+        </div>
+        
+        <div>
+          <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/30 to-white/10 my-4"></div>
+          <div className="flex justify-between items-end">
+            <div className="text-sm text-white/80 max-w-[80%]">
+              <span className="font-bold text-[hsl(var(--gold))]">Your AI Transformation: </span>
+              {transformation}
+            </div>
+            <motion.div 
+              className="w-8 h-8 bg-[hsl(var(--gold))] rounded-full flex items-center justify-center text-blue-900 font-bold text-sm"
+              whileHover={{ scale: 1.1 }}
+            >
+              {index + 1}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -62,84 +94,74 @@ export default function Industries() {
     {
       icon: "fas fa-shopping-cart",
       title: "Retail & E-commerce",
-      description: "Growing e-commerce adoption in SA makes AI crucial for retailers to understand consumer behavior and personalize offerings.",
-      benefits: [
-        "Dynamic pricing & inventory optimization",
-        "Hyper-personalized customer experiences",
-        "AI-powered chatbots for 24/7 support"
-      ]
+      tagline: "AI gives you the edge in South Africa's competitive and rapidly growing digital retail landscape.",
+      transformation: "Increase revenues by 25% with AI-powered personalization and smart inventory management.",
+      bgImage: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-industry",
       title: "Manufacturing",
-      description: "Enhancing competitiveness of SA's manufacturing sector through smart factories and optimized resource utilization.",
-      benefits: [
-        "Predictive maintenance to prevent costly downtime",
-        "AI-driven quality control processes",
-        "Optimized production scheduling"
-      ]
+      tagline: "Turn your factory into a competitive powerhouse with AI optimization and predictive capabilities.",
+      transformation: "Reduce operational costs by 30% while improving quality control and production efficiency.",
+      bgImage: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-money-bill-wave",
-      title: "Finance & FinTech",
-      description: "South Africa has a robust financial sector and a burgeoning FinTech scene. AI is key for innovation and security.",
-      benefits: [
-        "AI-powered fraud detection and prevention",
-        "Smart financial advising (robo-advisors)",
-        "Personalized loan and insurance underwriting"
-      ]
+      title: "Financial Services",
+      tagline: "Stay ahead in South Africa's competitive financial sector with AI-powered security and personalization.",
+      transformation: "Detect fraud in real-time and offer hyper-personalized financial products to your customers.",
+      bgImage: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-hard-hat",
-      title: "Mining",
-      description: "A cornerstone of the SA economy, AI can drive significant efficiency, safety, and sustainability gains in mining operations.",
-      benefits: [
-        "Predictive maintenance for heavy machinery",
-        "Improved safety through automated monitoring",
-        "AI-powered geological data analysis"
-      ]
+      title: "Mining & Resources",
+      tagline: "Revolutionize safety, efficiency, and sustainability in South Africa's vital mining industry.",
+      transformation: "Reduce accidents by 45% and increase resource discovery success with AI geological analysis.",
+      bgImage: "https://images.unsplash.com/photo-1607293307267-abe7bc51c9fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-heartbeat",
       title: "Healthcare",
-      description: "Addressing healthcare challenges, improving access in underserved areas, and enhancing diagnostic accuracy.",
-      benefits: [
-        "AI-assisted diagnostics for early detection",
-        "Personalized treatment plans",
-        "AI-powered telemedicine solutions"
-      ]
+      tagline: "Transform patient outcomes and operational efficiency across South Africa's healthcare system.",
+      transformation: "Diagnose diseases up to 40% faster and reduce administrative workload by 60%.",
+      bgImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-leaf",
-      title: "Agriculture (AgriTech)",
-      description: "Combating climate challenges, improving food security, and enhancing farm efficiency in South Africa.",
-      benefits: [
-        "Precision farming using drone and satellite imagery",
-        "Crop health monitoring and pest prediction",
-        "Optimized irrigation and fertilization"
-      ]
-    }
+      title: "Agriculture",
+      tagline: "Future-proof South African farming against climate challenges with precision AI agriculture.",
+      transformation: "Increase crop yields by 35% while reducing water usage and chemical applications.",
+      bgImage: "https://images.unsplash.com/photo-1595508064774-5ff825ff0f81?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
   ];
 
   return (
-    <section id="industries" className="py-16 bg-[hsl(var(--light-gray))] section-transition">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="industries" className="py-20 bg-gradient-to-br from-white to-[hsl(var(--light-gray))] relative">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNkZGRkZGQiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdjZoLTZ2LTZoNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">Transforming South African Sectors</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            AI is not a monolithic solution; its power lies in its adaptability across diverse industries critical to South Africa's economy.
+          <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-100 text-[hsl(var(--primary))] rounded-full uppercase tracking-wide mb-3">Industry Solutions</span>
+          
+          <h2 className="text-3xl md:text-5xl font-bold font-montserrat mb-4 bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-light))] bg-clip-text text-transparent">
+            AI Excellence for <br/>Every South African Sector
+          </h2>
+          
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Your industry has unique challenges. We deliver tailored AI solutions that transform 
+            those challenges into your strongest competitive advantages.
           </p>
         </motion.div>
         
         <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -148,25 +170,41 @@ export default function Industries() {
             <IndustryCard
               key={index}
               icon={industry.icon}
+              bgImage={industry.bgImage}
               title={industry.title}
-              description={industry.description}
-              benefits={industry.benefits}
+              tagline={industry.tagline}
+              transformation={industry.transformation}
+              index={index}
             />
           ))}
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-16 text-center bg-blue-50 p-8 rounded-2xl shadow-sm"
         >
-          <a href="#contact">
-            <Button size="lg">
-              Discuss Your Industry Needs
-            </Button>
-          </a>
+          <h3 className="text-xl font-bold mb-4 text-[hsl(var(--primary))]">
+            Don't see your industry? We customize AI solutions for <span className="underline decoration-[hsl(var(--gold))]">every business</span>
+          </h3>
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Your business is unique, and so are your AI needs. Our team of experts will work with you to develop 
+            a custom AI strategy that addresses your specific challenges and opportunities.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a href="#contact">
+              <Button size="lg" className="font-semibold">
+                Get Your Custom AI Strategy
+              </Button>
+            </a>
+            <a href="https://wa.me/0692992530" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="flex items-center gap-2 font-semibold">
+                <i className="fab fa-whatsapp text-green-500"></i> WhatsApp Us
+              </Button>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

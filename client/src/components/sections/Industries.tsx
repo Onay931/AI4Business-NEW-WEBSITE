@@ -110,7 +110,7 @@ export default function Industries() {
       title: "Financial Services",
       tagline: "Stay ahead in South Africa's competitive financial sector with AI-powered security and personalization.",
       transformation: "Detect fraud in real-time and offer hyper-personalized financial products to your customers.",
-      bgImage: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      bgImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       icon: "fas fa-hard-hat",

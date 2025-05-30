@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import AiMiniPcBanner from "@/components/sections/AiMiniPcBanner";
 import Services from "@/components/sections/Services";
 import BenefitsTimeline from "@/components/sections/BenefitsTimeline";
 import MarketMomentum from "@/components/sections/MarketMomentum";
@@ -23,6 +24,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <AiMiniPcBanner />
         <Services />
         <BenefitsTimeline />
         <MarketMomentum />

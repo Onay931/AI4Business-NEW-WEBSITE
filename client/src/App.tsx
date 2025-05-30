@@ -14,13 +14,8 @@ function Router() {
 
   return (
     <Switch>
-      {isLoading || !isAuthenticated ? (
-        <Route path="/" component={Landing} />
-      ) : (
-        <>
-          <Route path="/" component={Home} />
-        </>
-      )}
+      <Route path="/" component={Home} />
+      <Route path="/login" component={Landing} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -113,6 +113,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // AI Chatbot endpoint (uses the same generate endpoint with specific context)
+  app.post("/api/ai/chat", async (req, res) => {
+    try {
+      // Validate request
+      const validated = generateContentSchema.parse(req.body);
+      
+      const result = await generateAiContent(validated as AiGenerationRequest);
+      res.status(200).json(result);
+    } catch (error) {
+      console.error("Error in AI chat:", error);
+      res.status(400).json({ 
+        status: "error", 
+        message: error instanceof Error ? error.message : "An unknown error occurred in chat" 
+      });
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;

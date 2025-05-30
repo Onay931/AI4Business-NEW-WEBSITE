@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRightIcon, CheckCircleIcon } from "@/assets/icons";
+import miniPcImage from "@assets/15ProPlus.png";
 
 export default function AiMiniPcBanner() {
   return (
@@ -110,6 +111,21 @@ export default function AiMiniPcBanner() {
               your business intelligence into <span className="text-white font-semibold">cutting-edge hardware architecture</span>.
             </p>
 
+            {/* NPU Explanation */}
+            <div className="bg-gradient-to-r from-blue-950/50 to-indigo-950/50 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">🧠</span>
+                </div>
+                <h4 className="text-lg font-bold text-blue-300">Neural Processing Unit (NPU)</h4>
+              </div>
+              <p className="text-blue-200 text-sm leading-relaxed">
+                An NPU is a specialized processor designed to accelerate artificial intelligence and machine learning tasks. 
+                This dedicated AI hardware accelerator ensures lightning-fast processing of neural networks and deep learning models, 
+                providing unmatched performance for your business AI applications.
+              </p>
+            </div>
+
             {/* Luxury Technical Specifications */}
             <div className="relative bg-gradient-to-br from-black/40 via-slate-900/60 to-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-[hsl(var(--gold))]/20 shadow-2xl overflow-hidden">
               {/* Luxury border glow */}
@@ -128,12 +144,12 @@ export default function AiMiniPcBanner() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
-                    { label: "AMD Ryzen 9 AI CPU", icon: "🔥", desc: "Ultimate Processing Power" },
-                    { label: "96 GB DDR5 RAM", icon: "⚡", desc: "Unmatched Memory Performance" },
-                    { label: "AMD Ryzen AI NPU Co-Processor", icon: "🧠", desc: "Dedicated AI Acceleration" },
+                    { label: "AMD Ryzen 9 8/12 Core - 16/24 Threads", icon: "🔥", desc: "Zen Cores Ultimate Processing Power" },
+                    { label: "96GB / 128GB DDR5 5600 RAM", icon: "⚡", desc: "Ultra-High Performance Memory" },
+                    { label: "AMD Ryzen AI NPU Co-Processor", icon: "🧠", desc: "Neural Processing Unit Accelerator" },
                     { label: "Radeon 890/780M RDNA 3 Graphics", icon: "🎮", desc: "Professional Graphics Engine" },
                     { label: "2x 1TB M.2 PCIe 4.0 NVMe SSD", icon: "💾", desc: "Lightning-Fast Storage" },
-                    { label: "Windows 11 & Linux Ready", icon: "💻", desc: "Dual OS Compatibility" }
+                    { label: "Windows 11 & Linux Installed", icon: "💻", desc: "Dual OS Pre-Configured" }
                   ].map((spec, index) => (
                     <motion.div
                       key={index}
@@ -195,45 +211,39 @@ export default function AiMiniPcBanner() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Main showcase container */}
+            {/* Premium showcase container */}
             <div className="relative perspective-1000">
-              {/* Holographic frame */}
-              <div className="relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-2xl rounded-3xl p-8 border border-white/30 shadow-2xl transform rotate-y-12">
+              {/* Luxury holographic frame */}
+              <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-3xl rounded-3xl p-10 border border-[hsl(var(--gold))]/30 shadow-2xl overflow-hidden">
+                {/* Premium glow effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--gold))]/5 via-transparent to-blue-500/5 rounded-3xl"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--gold))]/20 to-blue-500/20 rounded-3xl blur-sm -z-10"></div>
                 
-                {/* Mini PC 3D representation */}
-                <div className="relative mx-auto w-80 h-64 mb-8">
-                  {/* Main PC body */}
-                  <div className="absolute inset-x-8 inset-y-8 bg-gradient-to-br from-gray-800 via-slate-700 to-gray-900 rounded-2xl shadow-2xl border border-gray-600">
-                    {/* Top surface with glow */}
-                    <div className="absolute -top-2 -left-2 -right-2 h-4 bg-gradient-to-r from-blue-500/50 via-purple-500/50 to-blue-500/50 rounded-t-2xl blur-sm"></div>
+                {/* Actual Mini PC Image */}
+                <div className="relative mx-auto mb-8">
+                  <div className="relative group">
+                    <img 
+                      src={miniPcImage} 
+                      alt="AI4Business Custom AI Mini PC" 
+                      className="w-full max-w-md mx-auto rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105"
+                    />
                     
-                    {/* Front panel */}
-                    <div className="absolute inset-x-4 bottom-4 h-16 bg-gradient-to-b from-gray-700 to-gray-800 rounded-lg border border-gray-500">
-                      {/* Power button */}
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50"></div>
-                      
-                      {/* USB ports */}
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2">
-                        <div className="w-4 h-2 bg-blue-500 rounded-sm"></div>
-                        <div className="w-4 h-2 bg-blue-500 rounded-sm"></div>
-                      </div>
+                    {/* Premium overlay effects */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                    
+                    {/* Floating luxury indicators */}
+                    <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-[hsl(var(--gold))] via-yellow-400 to-[hsl(var(--gold))] rounded-2xl flex items-center justify-center animate-bounce shadow-xl shadow-[hsl(var(--gold))]/30 border border-yellow-300/30">
+                      <span className="text-black font-black text-lg">AI</span>
+                    </div>
+                    
+                    <div className="absolute -bottom-6 -left-6 w-14 h-14 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-600 rounded-xl flex items-center justify-center animate-pulse shadow-xl shadow-blue-500/30 border border-blue-400/30">
+                      <span className="text-white font-bold text-lg">⚡</span>
                     </div>
 
-                    {/* Side vents */}
-                    <div className="absolute -right-1 top-4 bottom-4 w-2">
-                      {Array.from({ length: 8 }, (_, i) => (
-                        <div key={i} className="w-full h-1 bg-gray-600 rounded mb-1"></div>
-                      ))}
+                    {/* Premium badge */}
+                    <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm text-[hsl(var(--gold))] px-4 py-2 rounded-lg font-bold text-sm border border-[hsl(var(--gold))]/30">
+                      EXCLUSIVE EDITION
                     </div>
-                  </div>
-
-                  {/* Floating AI indicators */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-[hsl(var(--gold))] to-yellow-500 rounded-full flex items-center justify-center animate-bounce shadow-lg">
-                    <span className="text-black font-bold text-xs">AI</span>
-                  </div>
-                  
-                  <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center animate-pulse shadow-lg">
-                    <span className="text-white font-bold text-xs">⚡</span>
                   </div>
                 </div>
 

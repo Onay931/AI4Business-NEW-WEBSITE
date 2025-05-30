@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import AiMiniPcBanner from "@/components/sections/AiMiniPcBanner";
+import GamifiedSpecs from "@/components/sections/GamifiedSpecs";
 import Services from "@/components/sections/Services";
 import BenefitsTimeline from "@/components/sections/BenefitsTimeline";
 import MarketMomentum from "@/components/sections/MarketMomentum";
@@ -25,6 +26,7 @@ export default function Home() {
       <main>
         <Hero />
         <AiMiniPcBanner />
+        <GamifiedSpecs />
         <Services />
         <BenefitsTimeline />
         <MarketMomentum />

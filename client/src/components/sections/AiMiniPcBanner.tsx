@@ -6,41 +6,19 @@ import miniPcImage from "@assets/15ProPlus.png";
 
 export default function AiMiniPcBanner() {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-black via-slate-900 to-blue-950">
-      {/* Premium background elements */}
+    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
+      {/* Clean geometric background */}
       <div className="absolute inset-0">
-        {/* Luxury grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+        {/* Subtle grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
         
-        {/* Premium geometric patterns */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(212,175,55,0.1)_0%,transparent_50%)]"></div>
-          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.08)_0%,transparent_50%)]"></div>
-        </div>
+        {/* Modern geometric shapes */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-[hsl(var(--gold))]/5 to-transparent rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-48 h-48 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full"></div>
         
-        {/* Floating luxury particles */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 30 }, (_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full animate-pulse ${i % 3 === 0 ? 'bg-[hsl(var(--gold))]' : i % 3 === 1 ? 'bg-blue-400' : 'bg-white'}`}
-              style={{
-                width: `${Math.random() * 3 + 1}px`,
-                height: `${Math.random() * 3 + 1}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                opacity: 0.6
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Premium glowing orbs */}
-        <div className="absolute top-16 left-8 w-40 h-40 bg-gradient-to-r from-[hsl(var(--gold))]/10 to-yellow-500/10 rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-16 right-8 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-indigo-500/5 to-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        {/* Floating minimal elements */}
+        <div className="absolute top-32 left-1/4 w-2 h-2 bg-[hsl(var(--gold))] rounded-full animate-pulse"></div>
+        <div className="absolute bottom-40 right-1/3 w-1 h-1 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -51,153 +29,104 @@ export default function AiMiniPcBanner() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-white space-y-8"
+            className="text-gray-900 space-y-10"
           >
-            {/* Premium header badges */}
-            <div className="flex items-center gap-4 flex-wrap mb-2">
-              <Badge className="bg-gradient-to-r from-[hsl(var(--gold))] via-yellow-400 to-[hsl(var(--gold))] text-black font-black px-6 py-3 text-sm tracking-wide border border-yellow-300/30 shadow-lg shadow-[hsl(var(--gold))]/20">
-                ⚡ EXCLUSIVE EDITION
+            {/* Clean modern badges */}
+            <div className="flex items-center gap-3 flex-wrap">
+              <Badge className="bg-[hsl(var(--gold))] text-black font-bold px-4 py-2 text-xs tracking-wider border-0 shadow-sm">
+                EXCLUSIVE
               </Badge>
-              <Badge className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 text-white border border-slate-600/50 px-6 py-3 text-sm font-bold tracking-wide shadow-lg">
+              <Badge className="bg-black text-white font-medium px-4 py-2 text-xs tracking-wider border-0 shadow-sm">
                 INVITATION ONLY
               </Badge>
-            </div>
-            <div className="flex items-center gap-4 flex-wrap">
-              <Badge className="bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 text-white border border-emerald-400/30 px-5 py-2 text-xs font-bold tracking-widest shadow-lg shadow-emerald-500/20">
-                UP TO 50% SAVINGS
-              </Badge>
-              <Badge className="bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-700 text-white border border-purple-400/30 px-5 py-2 text-xs font-bold tracking-widest shadow-lg shadow-purple-500/20">
-                ENTERPRISE GRADE
+              <Badge className="bg-gray-100 text-gray-700 font-medium px-4 py-2 text-xs tracking-wider border border-gray-200">
+                50% SAVINGS
               </Badge>
             </div>
             
-            {/* Luxury main title */}
-            <div className="space-y-6">
-              <div className="relative">
-                <h2 className="text-6xl md:text-8xl font-black font-montserrat leading-none tracking-tight">
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                      AI4Business
-                    </span>
-                    <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-transparent blur-sm -z-10"></div>
-                  </span>
-                  <br />
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-[hsl(var(--gold))] via-yellow-300 to-[hsl(var(--gold))] bg-clip-text text-transparent drop-shadow-2xl">
-                      CUSTOM AI
-                    </span>
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--gold))]/30 to-transparent blur-sm -z-10"></div>
-                  </span>
-                  <br />
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-blue-300 via-blue-200 to-blue-300 bg-clip-text text-transparent drop-shadow-2xl">
-                      Mini PC
-                    </span>
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-400/30 to-transparent blur-sm -z-10"></div>
-                  </span>
-                </h2>
-              </div>
+            {/* Clean modern title */}
+            <div className="space-y-8">
+              <h2 className="text-5xl md:text-7xl font-light font-montserrat leading-tight tracking-tight">
+                <span className="text-gray-900 block">AI4Business</span>
+                <span className="text-[hsl(var(--gold))] font-medium block">CUSTOM AI</span>
+                <span className="text-gray-600 block">Mini PC</span>
+              </h2>
               
-              <div className="flex items-center gap-4">
-                <div className="w-32 h-0.5 bg-gradient-to-r from-[hsl(var(--gold))] via-yellow-400 to-transparent rounded-full"></div>
-                <div className="w-6 h-6 bg-gradient-to-r from-[hsl(var(--gold))] to-yellow-400 rounded-full animate-pulse shadow-lg shadow-[hsl(var(--gold))]/50"></div>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-transparent rounded-full"></div>
-              </div>
+              <div className="w-20 h-1 bg-[hsl(var(--gold))] rounded-full"></div>
             </div>
             
-            <p className="text-2xl text-blue-100 leading-relaxed font-light">
-              The world's first <span className="text-[hsl(var(--gold))] font-bold bg-gradient-to-r from-[hsl(var(--gold))] to-yellow-400 bg-clip-text text-transparent">bespoke AI computing solution</span> designed 
+            <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
+              The world's first <span className="text-[hsl(var(--gold))] font-semibold">bespoke AI computing solution</span> designed 
               exclusively for discerning South African enterprises. A meticulously crafted powerhouse that seamlessly integrates 
-              your business intelligence into <span className="text-white font-semibold">cutting-edge hardware architecture</span>.
+              your business intelligence into <span className="text-gray-900 font-medium">cutting-edge hardware architecture</span>.
             </p>
 
-            {/* NPU Explanation */}
-            <div className="bg-gradient-to-r from-blue-950/50 to-indigo-950/50 backdrop-blur-sm rounded-xl p-6 border border-blue-500/20">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">🧠</span>
+            {/* Clean NPU Explanation */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🧠</span>
                 </div>
-                <h4 className="text-lg font-bold text-blue-300">Neural Processing Unit (NPU)</h4>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Neural Processing Unit (NPU)</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    An NPU is a specialized processor designed to accelerate artificial intelligence and machine learning tasks. 
+                    This dedicated AI hardware accelerator ensures lightning-fast processing of neural networks and deep learning models, 
+                    providing unmatched performance for your business AI applications.
+                  </p>
+                </div>
               </div>
-              <p className="text-blue-200 text-sm leading-relaxed">
-                An NPU is a specialized processor designed to accelerate artificial intelligence and machine learning tasks. 
-                This dedicated AI hardware accelerator ensures lightning-fast processing of neural networks and deep learning models, 
-                providing unmatched performance for your business AI applications.
-              </p>
             </div>
 
-            {/* Luxury Technical Specifications */}
-            <div className="relative bg-gradient-to-br from-black/40 via-slate-900/60 to-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-[hsl(var(--gold))]/20 shadow-2xl overflow-hidden">
-              {/* Luxury border glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--gold))]/10 via-transparent to-blue-500/10 rounded-3xl"></div>
+            {/* Clean Technical Specifications */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Enterprise Specifications</h3>
+                <p className="text-gray-600">Precision-engineered for excellence</p>
+              </div>
               
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[hsl(var(--gold))] via-yellow-400 to-[hsl(var(--gold))] rounded-xl flex items-center justify-center shadow-lg shadow-[hsl(var(--gold))]/30">
-                    <span className="text-black font-black text-lg">⚡</span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-black text-[hsl(var(--gold))] tracking-wide">ENTERPRISE SPECIFICATIONS</h3>
-                    <p className="text-blue-200 text-sm font-medium">Precision-engineered for excellence</p>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  {[
-                    { label: "AMD Ryzen 9 8/12 Core - 16/24 Threads", icon: "🔥", desc: "Zen Cores Ultimate Processing Power" },
-                    { label: "96GB / 128GB DDR5 5600 RAM", icon: "⚡", desc: "Ultra-High Performance Memory" },
-                    { label: "AMD Ryzen AI NPU Co-Processor", icon: "🧠", desc: "Neural Processing Unit Accelerator" },
-                    { label: "Radeon 890/780M RDNA 3 Graphics", icon: "🎮", desc: "Professional Graphics Engine" },
-                    { label: "2x 1TB M.2 PCIe 4.0 NVMe SSD", icon: "💾", desc: "Lightning-Fast Storage" },
-                    { label: "Windows 11 & Linux Installed", icon: "💻", desc: "Dual OS Pre-Configured" }
-                  ].map((spec, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="group relative p-4 bg-gradient-to-br from-white/5 via-white/3 to-transparent rounded-xl border border-white/10 hover:border-[hsl(var(--gold))]/30 transition-all duration-500 hover:shadow-lg hover:shadow-[hsl(var(--gold))]/10"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center group-hover:from-[hsl(var(--gold))]/20 group-hover:to-[hsl(var(--gold))]/10 transition-all">
-                          <span className="text-xl">{spec.icon}</span>
-                        </div>
-                        <div>
-                          <span className="text-white font-bold text-lg block leading-tight">{spec.label}</span>
-                          <span className="text-blue-300 text-sm font-medium">{spec.desc}</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  { label: "AMD Ryzen 9 8/12 Core - 16/24 Threads", desc: "Zen Cores Ultimate Processing Power" },
+                  { label: "96GB / 128GB DDR5 5600 RAM", desc: "Ultra-High Performance Memory" },
+                  { label: "AMD Ryzen AI NPU Co-Processor", desc: "Neural Processing Unit Accelerator" },
+                  { label: "Radeon 890/780M RDNA 3 Graphics", desc: "Professional Graphics Engine" },
+                  { label: "2x 1TB M.2 PCIe 4.0 NVMe SSD", desc: "Lightning-Fast Storage" },
+                  { label: "Windows 11 & Linux Installed", desc: "Dual OS Pre-Configured" }
+                ].map((spec, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="group p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+                  >
+                    <h4 className="text-gray-900 font-semibold text-lg mb-1">{spec.label}</h4>
+                    <p className="text-gray-600 text-sm">{spec.desc}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
 
-            {/* Premium CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6">
+            {/* Clean CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact">
                 <Button 
                   size="lg"
-                  className="relative bg-gradient-to-r from-[hsl(var(--gold))] via-yellow-400 to-[hsl(var(--gold))] text-black hover:shadow-2xl hover:shadow-[hsl(var(--gold))]/40 font-black text-xl px-12 py-6 group transition-all duration-500 border border-yellow-300/30 overflow-hidden"
+                  className="bg-[hsl(var(--gold))] text-black hover:bg-yellow-500 font-semibold text-lg px-8 py-4 group transition-all"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-[hsl(var(--gold))] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <span className="relative z-10 flex items-center">
-                    Reserve Your Exclusive Edition
-                    <ArrowRightIcon className="ml-3 group-hover:translate-x-2 transition-transform duration-300" size={24} />
-                  </span>
+                  Reserve Your Exclusive Edition
+                  <ArrowRightIcon className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Button>
               </a>
               <a href="https://wa.me/0692992530" target="_blank" rel="noopener noreferrer">
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="relative border-2 border-white/30 text-white hover:border-[hsl(var(--gold))] hover:text-[hsl(var(--gold))] font-bold text-xl px-12 py-6 bg-black/30 backdrop-blur-xl transition-all duration-500 group overflow-hidden"
+                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 font-semibold text-lg px-8 py-4"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--gold))]/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <span className="relative z-10 flex items-center">
-                    <span className="text-2xl mr-3">💎</span> Private Consultation
-                  </span>
+                  Private Consultation
                 </Button>
               </a>
             </div>
@@ -211,141 +140,90 @@ export default function AiMiniPcBanner() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Premium showcase container */}
-            <div className="relative perspective-1000">
-              {/* Luxury holographic frame */}
-              <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-3xl rounded-3xl p-10 border border-[hsl(var(--gold))]/30 shadow-2xl overflow-hidden">
-                {/* Premium glow effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--gold))]/5 via-transparent to-blue-500/5 rounded-3xl"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--gold))]/20 to-blue-500/20 rounded-3xl blur-sm -z-10"></div>
-                
-                {/* Actual Mini PC Image */}
-                <div className="relative mx-auto mb-8">
+            {/* Clean modern showcase */}
+            <div className="relative">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                {/* Clean Mini PC Image */}
+                <div className="relative mx-auto mb-6">
                   <div className="relative group">
                     <img 
                       src={miniPcImage} 
                       alt="AI4Business Custom AI Mini PC" 
-                      className="w-full max-w-md mx-auto rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105"
+                      className="w-full max-w-sm mx-auto rounded-xl transition-transform duration-300 group-hover:scale-105"
                     />
                     
-                    {/* Premium overlay effects */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
-                    
-                    {/* Floating luxury indicators */}
-                    <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-[hsl(var(--gold))] via-yellow-400 to-[hsl(var(--gold))] rounded-2xl flex items-center justify-center animate-bounce shadow-xl shadow-[hsl(var(--gold))]/30 border border-yellow-300/30">
-                      <span className="text-black font-black text-lg">AI</span>
-                    </div>
-                    
-                    <div className="absolute -bottom-6 -left-6 w-14 h-14 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-600 rounded-xl flex items-center justify-center animate-pulse shadow-xl shadow-blue-500/30 border border-blue-400/30">
-                      <span className="text-white font-bold text-lg">⚡</span>
-                    </div>
-
-                    {/* Premium badge */}
-                    <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm text-[hsl(var(--gold))] px-4 py-2 rounded-lg font-bold text-sm border border-[hsl(var(--gold))]/30">
-                      EXCLUSIVE EDITION
+                    {/* Simple badge */}
+                    <div className="absolute top-3 left-3 bg-[hsl(var(--gold))] text-black px-3 py-1 rounded-lg font-medium text-sm">
+                      EXCLUSIVE
                     </div>
                   </div>
                 </div>
 
-                {/* Performance metrics display */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                {/* Clean metrics display */}
+                <div className="grid grid-cols-3 gap-4">
                   {[
-                    { label: "CPU Power", value: "96", unit: "GB RAM" },
-                    { label: "AI Speed", value: "NPU", unit: "Dedicated" },
-                    { label: "Savings", value: "50%", unit: "Cost Cut" }
+                    { label: "Memory", value: "128GB", unit: "DDR5" },
+                    { label: "AI Cores", value: "NPU", unit: "Dedicated" },
+                    { label: "Savings", value: "50%", unit: "vs Standard" }
                   ].map((metric, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                      className="text-center p-3 bg-white/10 rounded-xl border border-white/20"
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="text-center p-4 bg-gray-50 rounded-xl"
                     >
-                      <div className="text-2xl font-bold text-[hsl(var(--gold))]">{metric.value}</div>
-                      <div className="text-xs text-blue-200">{metric.unit}</div>
-                      <div className="text-xs text-white/70">{metric.label}</div>
+                      <div className="text-2xl font-bold text-[hsl(var(--gold))] mb-1">{metric.value}</div>
+                      <div className="text-xs text-gray-600">{metric.unit}</div>
+                      <div className="text-xs text-gray-500 mt-1">{metric.label}</div>
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Animated data flow */}
-                <div className="flex justify-center">
-                  <div className="flex items-center gap-2">
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <motion.div
-                        key={i}
-                        className="w-2 h-2 bg-blue-400 rounded-full"
-                        animate={{
-                          scale: [1, 1.5, 1],
-                          opacity: [0.5, 1, 0.5],
-                        }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          delay: i * 0.2,
-                        }}
-                      />
-                    ))}
-                  </div>
-                </div>
               </div>
-
-              {/* Floating holographic elements */}
-              <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-gradient-to-br from-[hsl(var(--gold))]/30 to-yellow-400/30 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
           </motion.div>
         </div>
 
-        {/* Premium Bottom Showcase */}
+        {/* Clean Bottom Showcase */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="mt-20 text-center"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 text-center"
         >
-          <div className="relative bg-gradient-to-br from-black/60 via-slate-900/80 to-black/60 backdrop-blur-2xl rounded-3xl p-12 border border-[hsl(var(--gold))]/30 shadow-2xl overflow-hidden">
-            {/* Luxury background elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--gold))]/5 via-transparent to-blue-500/5"></div>
-            <div className="absolute top-0 left-1/4 w-32 h-32 bg-[hsl(var(--gold))]/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
+          <div className="bg-white border border-gray-200 rounded-2xl p-12 shadow-sm">
+            <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+              Invitation-Only Access
+            </h3>
             
-            <div className="relative z-10">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[hsl(var(--gold))] via-yellow-400 to-[hsl(var(--gold))] rounded-2xl flex items-center justify-center shadow-lg shadow-[hsl(var(--gold))]/30">
-                  <span className="text-black font-black text-2xl">👑</span>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+              Meticulously engineered specifications tailored to your enterprise requirements. 
+              <span className="text-[hsl(var(--gold))] font-semibold"> Available exclusively through AI4Business partnerships.</span>
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <span className="text-2xl">∞</span>
                 </div>
-                <div className="w-3 h-3 bg-[hsl(var(--gold))] rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="text-gray-900 font-semibold">Unlimited Customization</div>
+                <div className="text-gray-600 text-sm">Tailored to your needs</div>
               </div>
-              
-              <h3 className="text-4xl font-black text-[hsl(var(--gold))] mb-4 tracking-wide">
-                INVITATION-ONLY ACCESS
-              </h3>
-              
-              <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
-                Meticulously engineered specifications tailored to your enterprise requirements. 
-                <span className="text-[hsl(var(--gold))] font-bold"> Available exclusively through AI4Business elite partnerships.</span>
-              </p>
-              
-              <div className="mt-8 flex items-center justify-center gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-[hsl(var(--gold))]">∞</div>
-                  <div className="text-blue-200 text-sm font-medium">Customization</div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <span className="text-2xl">24/7</span>
                 </div>
-                <div className="w-px h-12 bg-gradient-to-b from-transparent via-[hsl(var(--gold))] to-transparent"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-[hsl(var(--gold))]">24/7</div>
-                  <div className="text-blue-200 text-sm font-medium">Elite Support</div>
+                <div className="text-gray-900 font-semibold">Elite Support</div>
+                <div className="text-gray-600 text-sm">Always available</div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <span className="text-2xl">1:1</span>
                 </div>
-                <div className="w-px h-12 bg-gradient-to-b from-transparent via-[hsl(var(--gold))] to-transparent"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-[hsl(var(--gold))]">1:1</div>
-                  <div className="text-blue-200 text-sm font-medium">Personal Architect</div>
-                </div>
+                <div className="text-gray-900 font-semibold">Personal Architect</div>
+                <div className="text-gray-600 text-sm">Dedicated specialist</div>
               </div>
             </div>
           </div>

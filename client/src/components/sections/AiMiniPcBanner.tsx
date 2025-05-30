@@ -33,10 +33,41 @@ export default function AiMiniPcBanner() {
               <span className="block text-[hsl(var(--gold))]">Mini PC</span>
             </h2>
             
-            <p className="text-xl text-white/90 mb-6 leading-relaxed">
+            <p className="text-xl text-white/90 mb-4 leading-relaxed">
               The world's first bespoke AI computing solution designed exclusively for South African businesses. 
               An all-in-one powerhouse that integrates your business AI directly into cutting-edge hardware.
             </p>
+
+            {/* Technical Specifications */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-6 border border-white/20">
+              <h3 className="text-lg font-semibold text-[hsl(var(--gold))] mb-3">Technical Specifications</h3>
+              <div className="grid md:grid-cols-2 gap-3 text-sm text-white/90">
+                <div className="flex items-center">
+                  <CheckCircleIcon className="text-[hsl(var(--gold))] mr-2 flex-shrink-0" size={16} />
+                  <span>AMD Ryzen 9 AI CPU</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircleIcon className="text-[hsl(var(--gold))] mr-2 flex-shrink-0" size={16} />
+                  <span>96 GB DDR5 RAM</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircleIcon className="text-[hsl(var(--gold))] mr-2 flex-shrink-0" size={16} />
+                  <span>AMD Ryzen AI NPU Co-Processor</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircleIcon className="text-[hsl(var(--gold))] mr-2 flex-shrink-0" size={16} />
+                  <span>Radeon 890/780M RDNA 3 Graphics</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircleIcon className="text-[hsl(var(--gold))] mr-2 flex-shrink-0" size={16} />
+                  <span>2x 1TB M.2 PCIe 4.0 NVMe SSD</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircleIcon className="text-[hsl(var(--gold))] mr-2 flex-shrink-0" size={16} />
+                  <span>Windows 11 & Linux Ready</span>
+                </div>
+              </div>
+            </div>
 
             {/* Key Benefits */}
             <div className="space-y-3 mb-8">
@@ -46,7 +77,7 @@ export default function AiMiniPcBanner() {
               </div>
               <div className="flex items-center">
                 <CheckCircleIcon className="text-[hsl(var(--gold))] mr-3 flex-shrink-0" size={20} />
-                <span className="text-white/90">Proprietary AI computing architecture</span>
+                <span className="text-white/90">Dedicated AI processing with NPU co-processor</span>
               </div>
               <div className="flex items-center">
                 <CheckCircleIcon className="text-[hsl(var(--gold))] mr-3 flex-shrink-0" size={20} />
@@ -54,7 +85,7 @@ export default function AiMiniPcBanner() {
               </div>
               <div className="flex items-center">
                 <CheckCircleIcon className="text-[hsl(var(--gold))] mr-3 flex-shrink-0" size={20} />
-                <span className="text-white/90">Bespoke hardware tailored to your business</span>
+                <span className="text-white/90">Enterprise-grade performance and reliability</span>
               </div>
             </div>
 

@@ -1,26 +1,30 @@
 # AI4Business Vercel Deployment Guide
 
-## Prerequisites
-1. GitHub account
-2. Vercel account (free tier available)
-3. Domain name (optional, for custom domain)
+## Quick Start (5 Minutes to Live Website)
 
-## Step 1: Prepare Your Repository
+### Step 1: Create GitHub Repository
+1. Go to **github.com** and sign in
+2. Click **"New repository"**
+3. Name: `ai4business-website`
+4. Set to **Public**
+5. Click **"Create repository"**
 
-### 1.1 Push to GitHub
-```bash
-git init
-git add .
-git commit -m "Initial commit - AI4Business website"
-git remote add origin https://github.com/yourusername/ai4business-website.git
-git push -u origin main
-```
+### Step 2: Upload Project Files
+**Important files to upload:**
+- `api/` folder (AI endpoints)
+- `client/` folder (website)
+- `server/` folder (backend logic)
+- `shared/` folder (database schema)
+- `vercel.json` (deployment config)
+- `package.json` (dependencies)
+- `package-lock.json`
+- `README.md`
 
-### 1.2 Project Structure
-Your project is already structured for Vercel with:
-- `/api/` - Vercel serverless functions
-- `/client/` - Frontend React application
-- `vercel.json` - Deployment configuration
+**Upload Method:**
+1. In GitHub, click **"uploading an existing file"**
+2. Drag all project folders/files
+3. Commit message: "AI4Business website deployment"
+4. Click **"Commit changes"**
 
 ## Step 2: Database Setup
 

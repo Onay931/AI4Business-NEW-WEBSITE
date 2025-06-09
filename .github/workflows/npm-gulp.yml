@@ -1,4 +1,4 @@
-name: NodeJS with Gulp
+name: Build and Deploy to Vercel
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -34,3 +34,12 @@ jobs:
 
       - name: Build with Gulp
         run: gulp
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{2dOQtL0mCXdS5VIso9LC0aBJ}}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm install -g vercel
+          vercel --prod --confirm --token $VERCEL_TOKEN --org $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID

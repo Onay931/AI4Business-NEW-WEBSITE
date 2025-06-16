@@ -22,7 +22,7 @@ Professional AI integration services and custom hardware solutions for South Afr
 ## Environment Variables
 
 ```
-GEMINI_API_KEY=your_gemini_api_key
+GROQ_API_KEY=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
 DATABASE_URL=your_postgresql_connection_string
 ```
 
